@@ -33,10 +33,10 @@ class nba_request():
                     for i in range(len(rows))]
 
         stats = pd.DataFrame(player_stats, columns = headers)
-        print(stats.head(10))
+        return stats
 
 
 g = nba_request()
-g.parse_url()
+print(g.parse_url())
 
 
