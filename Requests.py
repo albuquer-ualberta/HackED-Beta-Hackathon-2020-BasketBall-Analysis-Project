@@ -7,16 +7,18 @@ class nba_request():
         self.url = 'https://www.basketball-reference.com/leagues/NBA_' # NOT A FULL URL
 
 
-    def parse_url(self):
-        # NBA season we will be analyzing
-        year = 2020
-        # URL page we will scraping (see image above)
+    def totals(self, year):
+        self.parse_url('_totals.html', year)
 
-        temp = self.url + "{}_per_game.html".format(year)
+    def parse_url(self, extension, year):
+        # NBA season we will be analyzing
+        # URL page we will scraping (see image above)
+        merger = "{}" + extension
+        temp = self.url + merger.format(year)
+        print(temp)
         # this is the HTML from the given URL
         html = urlopen(temp)
         soup = BeautifulSoup(html, features='lxml')
-        
 
         # use findALL() to get the column headers
         soup.findAll('tr', limit=2)
@@ -37,6 +39,8 @@ class nba_request():
 
 
 g = nba_request()
-print(g.parse_url())
+#print(g.totals(2020))
+print(g.parse_url('_per_game.html', 2020))
+print(g.parse_url('_totals.html', 2020))
 
 
