@@ -7,14 +7,36 @@ class nba_request():
         self.url = 'https://www.basketball-reference.com/leagues/NBA_' # NOT A FULL URL
 
 
-    def totals(self, year):
-        self.parse_url('_totals.html', year)
+    def totals(self, url, year):
+        return self.parse_url(url, '_totals.html', year)
+    
+    def per_game(self,url, year):
+        return self.parse_url(url, '_per_game.html', year)
 
-    def parse_url(self, extension, year):
+    def per_36(self, url, year):
+        return self.parse_url(url, '_per_minute.html', year)
+    
+    def per_100(self, url, year):
+        return self.parse_url(url, '_per_poss.html', year)
+
+    def advanced(self, url, year):
+        return self.parse_url(url, '_advanced.html', year)
+
+    def play(self, url, year):
+        return self.parse_url(url, '_play-by-play.html', year)
+
+    def shooting(self, url, year):
+        return self.parse_url(url, '_shooting.html', year)
+
+    def adjusted_shooting(self, url, year):
+        return self.parse_url(url, '_adj_shooting.html', year)
+    
+
+    def parse_url(self, url, extension, year):
         # NBA season we will be analyzing
         # URL page we will scraping (see image above)
         merger = "{}" + extension
-        temp = self.url + merger.format(year)
+        temp = url + merger.format(year)
         print(temp)
         # this is the HTML from the given URL
         html = urlopen(temp)
@@ -38,9 +60,7 @@ class nba_request():
         return stats
 
 
-g = nba_request()
-#print(g.totals(2020))
-print(g.parse_url('_per_game.html', 2020))
-print(g.parse_url('_totals.html', 2020))
+
+
 
 
