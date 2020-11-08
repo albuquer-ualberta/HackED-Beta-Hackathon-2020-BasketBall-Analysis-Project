@@ -193,7 +193,7 @@ class szn_analysis():
         else:
             print('invalid')
      
-     def histo_percent(self, dic set_type='per_game', metric='3P%'): #ANALYSIS OF per game
+    def histo_percent(self, dic set_type='per_game', metric='3P%'): #ANALYSIS OF per game
         percent_list = []
         index = 12
         if metric == 'FG%':
