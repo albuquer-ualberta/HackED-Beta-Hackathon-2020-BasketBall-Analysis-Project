@@ -153,7 +153,7 @@ def find_mode(a_para_list):
     :return:
         a_mode: a minimum value
     """
-    num_lt = [float(i) for i in a_para_list]
+    num_lt = [float(i) for i in a_para_list] # Arjun Mehta
     mode_val = statistics.mode(num_lt)
 
     return mode_val
