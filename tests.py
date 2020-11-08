@@ -1,5 +1,10 @@
-import numpy
 from basketball_analysis import sznAnalysis
+
+class test_player():
+    def __init__(name):
+        self.name = name
+
+
 
 test = sznAnalysis.szn_analysis(2020)
 
