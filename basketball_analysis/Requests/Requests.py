@@ -90,6 +90,14 @@ class nba_request():
     
 
     def parse_url(self, url, extension, year):
+        """ Return a panda dataframe based on the extension and season
+        
+        :param url: (string) an attribute of nba_request object
+        :param extension: (string) user specified
+        :param year: (integer) user specified
+        :return: 
+            stats: a pandas dataframe
+        """
         # NBA season we will be analyzing
         # URL page we will scraping (see image above)
         merger = "{}" + extension
