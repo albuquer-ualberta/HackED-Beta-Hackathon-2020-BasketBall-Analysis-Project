@@ -6,8 +6,8 @@ with open('README.md','r') as fh:
 setuptools.setup(
   name = '',
   version = '0.0.1',
-  author = 'Arjun Mehta',
-  author_email="",
+  author = 'Neville Albuquerque','Albert Dinh', 'Arjun Mehta', 'Ishaan Rehmani', 
+  author_email="albuquer@ualberta.ca", "dadinh@ualberta.ca", 'mehta1@ualberta.ca', 'irehmani@ualberta.ca',
   description="",
   long_description= longDescription,
   long_description_content_type="text/markdown",

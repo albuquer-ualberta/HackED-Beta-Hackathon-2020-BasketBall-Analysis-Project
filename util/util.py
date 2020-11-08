@@ -1,28 +1,27 @@
 # HackED Beta 2020
 # Author: Albert Dinh
 
-from hackedbeta import sznAnalysis, Requests
 import statistics
 
 # Initial parameters
 # FIXME Potentially will have to take into account other ways to input
-request_var = Requests.nba_request()
-season = int(input('Enter a season: '))
-req = input('Enter the desired mode: ')
+# request_var = Requests.nba_request()
+# season = int(input('Enter a season: '))
+# req = input('Enter the desired mode: ')
 
-# FIXME Potentially more modes to add
-if req == 'totals':
-    table = request_var.totals(request_var.url, year=season)
-elif req == 'per-game':
-    table = request_var.per_game(request_var.url, year=season)
+# # FIXME Potentially more modes to add
+# if req == 'totals':
+#     table = request_var.totals(request_var.url, year=season)
+# elif req == 'per-game':
+#     table = request_var.per_game(request_var.url, year=season)
 
-# An object of class
-season_analysis_obj = sznAnalysis.szn_analysis(table)
+# # An object of class
+# season_analysis_obj = sznAnalysis.szn_analysis(table)
 
-# A dictionary of players and their statistics
-structure_obj_szn_analysis = season_analysis_obj.create_stucture(table)
+# # A dictionary of players and their statistics
+# structure_obj_szn_analysis = season_analysis_obj.create_stucture(table)
 
-name_players = list(structure_obj_szn_analysis.keys())[1:]
+# name_players = list(structure_obj_szn_analysis.keys())[1:]
 
 
 def get_wanted_parameter(full_structure, names, index_para):
