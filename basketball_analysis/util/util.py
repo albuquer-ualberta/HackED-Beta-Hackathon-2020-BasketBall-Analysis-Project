@@ -1,5 +1,17 @@
-# HackED Beta 2020
-# Author: Albert Dinh
+"""
+HackED Beta 2020
+Author: Albert Dinh
+
+Reference:
+    For statistics.mode()
+    https://www.geeksforgeeks.org/python-statistics-mode-function/
+
+    For statistics.median()
+    https://www.geeksforgeeks.org/python-statistics-median/
+
+    For statistic.stdev()
+    https://www.geeksforgeeks.org/python-statistics-stdev/
+"""
 
 import statistics
 
@@ -105,7 +117,7 @@ def compute_stdev(a_para_list):
     :param a_para_list: a list of parameters for all player
     :return:
     """
-    num_lt = [float(i) for i in a_para_list]
+    num_lt = [float(i) for i in a_para_list] # Arjun Mehta
     std_ev = statistics.stdev(num_lt)
 
     return std_ev
@@ -117,7 +129,7 @@ def find_max(a_para_list):
     :return:
         a_max = a maximum value
     """
-    num_lt = [float(i) for i in a_para_list]
+    num_lt = [float(i) for i in a_para_list] # Arjun Mehta
     max_val = max(num_lt)
 
     return max_val
@@ -129,10 +141,22 @@ def find_min(a_para_list):
     :return:
         a_min: a minimum value
     """
-    num_lt = [float(i) for i in a_para_list]
+    num_lt = [float(i) for i in a_para_list] # Arjun Mehta
     min_val = min(num_lt)
     
     return min_val
+
+
+def find_mode(a_para_list):
+    """ Take in a list and returns it mode
+    :param a_para_list: a list of a wanted parameter
+    :return:
+        a_mode: a minimum value
+    """
+    num_lt = [float(i) for i in a_para_list] # Arjun Mehta
+    mode_val = statistics.mode(num_lt)
+
+    return mode_val
 
 
 if __name__ == '__main__':
