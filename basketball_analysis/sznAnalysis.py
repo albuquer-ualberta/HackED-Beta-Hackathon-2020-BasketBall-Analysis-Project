@@ -109,6 +109,11 @@ class szn_analysis():
 
 
     def create_structure(self, frame):
+        """ Take in a frame and return a dicionary of data
+        :param frame: (Pandas data frame) scraped from the web
+        :return: 
+            dic: (dictionary) players' data
+        """
         dic = {}
         dic['STATS'] = list(frame.columns)
         for x in frame.to_numpy():
