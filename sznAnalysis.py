@@ -1,5 +1,5 @@
 import Requests
-from .analysis import threePoint
+#from .analysis import threePoint
 
 class szn_analysis():
     def __init__(self, frame):
@@ -18,6 +18,6 @@ class szn_analysis():
 g = Requests.nba_request()
 table = g.totals(g.url,2020)
 
-wah = g.adjusted_shooting(g.url, 2019)
+#wah = g.adjusted_shooting(g.url, 2019)
 testido = szn_analysis(table)
 print(testido.create_stucture(table)['Trevor Ariza'])
