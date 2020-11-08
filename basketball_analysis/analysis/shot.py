@@ -4,8 +4,8 @@ from scipy import stats
 from sklearn.metrics import r2_score
 
 
-def fifty_percentile(collective_scores): #collective
-        percentile = numpy.percentile(collective_scores, 50)
+def n_percentile(collective_scores, metric='3P%', percentile=50): #collective
+        percentile = numpy.percentile(collective_scores, percentile)
         return percentile
 
 def histogram(collective_scores): #collective
