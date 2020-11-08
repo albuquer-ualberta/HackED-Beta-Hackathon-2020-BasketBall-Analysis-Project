@@ -118,6 +118,12 @@ class szn_analysis():
         return dic
     
     def add_frame(self, typi=1):
+        """ Take in an integer and return a Pandas dataframe
+
+        :param typi: (integer) user input for the choice of file
+        :return:
+            a Pandas data frame
+        """
         if typi == 0:
             return self.nba_request.totals(self.nba_request.url, self.year)
         elif typi == 1:
