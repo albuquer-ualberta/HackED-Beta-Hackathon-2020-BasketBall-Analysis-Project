@@ -2,23 +2,6 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
-"""
-HackED Beta 2020
-
-This module gets in the data from the URL specified by the user
-and returns a final pandas dataframe for further processing
-"""
-
-    """ Take in a list of players' names, a wanted parameter and return
-    :param a_wanted_parameter: a string defined by the user
-    :param full_structure: a dictionary of players' statistics
-    :param names: a list of players' names
-    :param index_para: index of the wanted parameter depending on the file
-    :return:
-        a_list_of_wanted_para: a list of wanted parameter for each player
-    """
-
-
 class nba_request():
     def __init__(self):
         self.url = 'https://www.basketball-reference.com/leagues/NBA_' # NOT A FULL URL
