@@ -1,5 +1,6 @@
 import Requests
-#from .analysis import threePoint
+from analysis import threePoint
+from util import util
 
 class player_analysis():
     def __init__(self, name):
@@ -66,9 +67,9 @@ class szn_analysis():
             print('invalid')
 
 
-g = player_analysis('Stephen Curry')
-print(g.name)
-g.szn_count(year=2020, typi=1)
-print(g.years_active)
-for x in g.szns:
-    print(x.structures[0][1])
+# g = player_analysis('Stephen Curry')
+# print(g.name)
+# g.szn_count(year=2020, typi=1)
+# print(g.years_active)
+# for x in g.szns:
+#     print(x.structures[0][1])
