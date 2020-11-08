@@ -160,6 +160,11 @@ class szn_analysis():
 
 
     def create_structure(self, frame):
+        """ Take in a frame and return a dicionary of data
+        :param frame: (Pandas data frame) scraped from the web
+        :return: 
+            dic: (dictionary) players' data
+        """
         dic = {}
         dic['STATS'] = list(frame.columns)
         for x in frame.to_numpy():
@@ -169,6 +174,12 @@ class szn_analysis():
         return dic
     
     def add_frame(self, typi=1):
+        """ Take in an integer and return a Pandas dataframe
+
+        :param typi: (integer) user input for the choice of file
+        :return:
+            a Pandas data frame
+        """
         if typi == 0:
             return self.nba_request.totals(self.nba_request.url, self.year)
         elif typi == 1:
@@ -182,27 +193,17 @@ class szn_analysis():
         else:
             print('invalid')
     
-    def histo_percent(self, dic set_type='per_game', metric='3P%'): #ANALYSIS OF per game
-        percent_list = []
-        index = 12
-        if metric == 'FG%':
-            index = 9
-        elif metric == '3P%':
-            index = 12
-        elif metric == '2P%':
-            index = 15
-        elif metric == 'eFG%':
-            index = 16
-        elif metric == 'FT%':
-            index = 19
 
-        for x in dic:
-            if dic[x][index] != '' and (dic[x][index] != metric):
-                percent_list.append(float(dic[x][index]))
-        
-        return shot.histogram(percent_list)
 
     def szn_percentile(self, dic, set_type='per_game', metric='3P%', percentile=50): #ANALYSIS OF per game
+        """ Return the 50th percentile
+
+        :param dic: (dictionary) statistics for one season
+        :param set_type: (string) a type of file
+        :param metric: (string) a wanted metric
+        :param percentile: (float) the nth percentile
+        :return:
+        """
         percent_list = []
         index = 12
         if metric == 'FG%':
