@@ -4,6 +4,43 @@
 import statistics
 
 
+def custom_input_number(prompt=''):
+    """ Take in user input. This deals with real
+    number only. See below for a function that deals with
+    purely alphabetic strings.
+
+    :param prompt: a customizable prompt
+    :return:
+    """
+    cF = True
+    while cF:
+        try:
+            price = float(input(prompt))
+            float(price)
+            return price
+        except ValueError:
+            print('Cannot be converted to a string')
+            continue
+
+
+def name_handling(prompt=''):
+    """ Ask the user for input
+
+    :param prompt:
+    :return:
+        name_item: a category
+    """
+    cF = True
+    while cF:
+        try:
+            name_item = input(prompt)
+            assert (name_item.isalpha()), 'Assume valid input'
+            return name_item
+        except AssertionError:
+            print('The input is not valid!')
+            continue
+
+
 def get_vertical_index(typi, category):
     """ Take a user input for what datatype and category
 
