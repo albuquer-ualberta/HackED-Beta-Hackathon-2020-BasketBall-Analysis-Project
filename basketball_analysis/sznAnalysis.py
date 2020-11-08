@@ -1,6 +1,6 @@
-import Requests
-from analysis import threePoint
-from util import util
+from .Requests import Requests
+from .analysis import threePoint
+from .util import util
 
 class player_analysis():
     def __init__(self, name):
