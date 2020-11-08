@@ -19,7 +19,7 @@ def histogram(collective_scores): #collective
 #regression modelling used for machine learning and statistical model based predictions
 def regression(collective_x, collective_y): #individual
     slope, intercept, r, p, std_err = stats.linregress(collective_x, collective_y) #tries out a linear regression model
-    if abs(r) < 0.6 #if the linear regression's correlation coefficient (measures the associativity of given data) < 0.6 we use polynomial regression
+    if abs(r) < 0.6: #if the linear regression's correlation coefficient (measures the associativity of given data) < 0.6 we use polynomial regression
         polymodel = numpy.poly1d(numpy.polyfit(collective_x,collective_y, 3)) #creates a cubic regression model that fits the data better
         return polymodel #returns the cubic model
     else:

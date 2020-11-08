@@ -101,7 +101,6 @@ class nba_request():
         # URL page we will scraping (see image above)
         merger = "{}" + extension
         temp = url + merger.format(year)
-        print(temp)
         # this is the HTML from the given URL
         html = urlopen(temp)
         soup = BeautifulSoup(html, features='lxml')
