@@ -2,6 +2,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+
 class nba_request():
     def __init__(self):
         self.url = 'https://www.basketball-reference.com/leagues/NBA_' # NOT A FULL URL
@@ -58,9 +59,4 @@ class nba_request():
 
         stats = pd.DataFrame(player_stats, columns = headers)
         return stats
-
-
-
-
-
 

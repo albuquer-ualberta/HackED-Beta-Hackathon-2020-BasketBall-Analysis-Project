@@ -67,9 +67,6 @@ class szn_analysis():
             print('invalid')
 
 
-
-
-
 g = player_analysis('Stephen Curry')
 print(g.name)
 g.szn_count(year=2020, typi=1)
