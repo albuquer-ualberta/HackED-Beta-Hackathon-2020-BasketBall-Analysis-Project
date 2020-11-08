@@ -49,15 +49,43 @@ class nba_request():
         return self.parse_url(url, '_per_poss.html', year)
 
     def advanced(self, url, year):
+        """ This gets the advanced statistics in a season
+
+        :param url: an attribute of nba_request object
+        :param year: an integer as a season year
+        :return:
+            df: a data pandas frame
+        """
         return self.parse_url(url, '_advanced.html', year)
 
     def play(self, url, year):
+        """ This gets the play-by-play statistics in a season
+
+        :param url: an attribute of nba_request object
+        :param year: an integer as a season year
+        :return:
+            df: a data pandas frame
+        """
         return self.parse_url(url, '_play-by-play.html', year)
 
     def shooting(self, url, year):
+        """ This gets the shooting statistics in a season
+
+        :param url: an attribute of nba_request object
+        :param year: an integer as a season year
+        :return:
+            df: a data pandas frame
+        """
         return self.parse_url(url, '_shooting.html', year)
 
     def adjusted_shooting(self, url, year):
+        """ This gets the adjusted shooting statistics in a season
+
+        :param url: an attribute of nba_request object
+        :param year: an integer as a season year
+        :return:
+            df: a data pandas frame
+        """
         return self.parse_url(url, '_adj_shooting.html', year)
     
 
