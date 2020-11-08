@@ -4,6 +4,7 @@
 import statistics
 
 
+
 def get_vertical_index(typi, category):
     """ Take a user input for what datatype and category
 
