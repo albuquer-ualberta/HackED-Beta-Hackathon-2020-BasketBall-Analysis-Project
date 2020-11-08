@@ -19,6 +19,13 @@ class nba_request():
         return self.parse_url(url, '_totals.html', year)
     
     def per_game(self,url, year):
+        """ This gets the per-game statistics in a season
+
+        :param url: an attribute of nba_request object
+        :param year: an integer as a season year
+        :return:
+            df: a data pandas frame
+        """
         return self.parse_url(url, '_per_game.html', year)
 
     def per_36(self, url, year):
