@@ -8,7 +8,7 @@ setuptools.setup(
   version = '0.0.1',
   author = 'Neville Albuquerque','Albert Dinh', 'Arjun Mehta', 'Ishaan Rehmani', 
   author_email="albuquer@ualberta.ca", "dadinh@ualberta.ca", 'mehta1@ualberta.ca', 'irehmani@ualberta.ca',
-  description="",
+  description="A Python module focused on running statistical analysis on the NBA. The module currently supports overall season analysis, career analysis, and individual season performance.",
   long_description= longDescription,
   long_description_content_type="text/markdown",
   url="",
