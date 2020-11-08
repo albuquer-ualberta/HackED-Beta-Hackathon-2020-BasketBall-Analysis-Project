@@ -107,5 +107,29 @@ def compute_stdev(a_para_list):
     return std_ev
 
 
+def find_max(a_para_list):
+    """ Take in a list and return its maximum value
+    :param a_para_list: a list of a wanted parameter
+    :return:
+        a_max = a maximum value
+    """
+    num_lt = [float(i) for i in a_para_list]
+    max_val = max(num_lt)
+
+    return max_val
+
+
+def find_min(a_para_list):
+    """ Take in a list and return its minimum value
+    :param a_para_list: a list of a wanted parameter
+    :return:
+        a_min: a minimum value
+    """
+    num_lt = [float(i) for i in a_para_list]
+    min_val = min(num_lt)
+    
+    return min_val
+
+
 if __name__ == '__main__':
     pass
