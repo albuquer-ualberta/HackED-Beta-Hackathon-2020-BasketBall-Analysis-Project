@@ -2,6 +2,12 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+"""
+HackED Beta 2020
+
+This module gets in the data from the URL specified by the user
+and returns a final pandas dataframe for further processing
+"""
 
 class nba_request():
     def __init__(self):
