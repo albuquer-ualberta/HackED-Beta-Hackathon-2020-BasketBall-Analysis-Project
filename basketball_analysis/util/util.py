@@ -10,13 +10,14 @@ def custom_input_number(prompt=''):
     purely alphabetic strings.
     :param prompt: a customizable prompt
     :return:
+        no: a real number
     """
     cF = True
     while cF:
         try:
-            price = float(input(prompt))
-            float(price)
-            return price
+            no = float(input(prompt))
+            float(no)
+            return no
         except ValueError:
             print('Cannot be converted to a string')
             continue
@@ -65,7 +66,7 @@ def get_vertical_index(typi, category):
 def get_list_names(season_data):
     """ Take in a dictionary object (class sznAnalysis)
     :return:
-        name_list: a list of player names
+        name_players: a list of player names
     """
     name_players = list(season_data.keys())[1:]
 
