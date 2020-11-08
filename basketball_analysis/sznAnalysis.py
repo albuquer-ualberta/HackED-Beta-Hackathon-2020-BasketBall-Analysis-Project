@@ -131,7 +131,13 @@ class szn_analysis():
         else:
             print('invalid')
     
-    def histo_percent(self, dic): #ANALYSIS OF per game
+    def histo_percent(self, dic):
+        """ Get a histogram
+        
+        :param dic: (dictionary) statistics of a season
+        :return: 
+            a histogram from a season's wanted parameter
+        """
         three_percent_list = []
 
         for x in dic:
