@@ -19,11 +19,5 @@ g = Requests.nba_request()
 table = g.totals(g.url,2020)
 
 wah = g.adjusted_shooting(g.url, 2019)
-
 testido = szn_analysis(table)
-<<<<<<< HEAD
 print(testido.create_stucture(table)['Trevor Ariza'])
-=======
-print(testido.create_stucture(table)['Trevor Ariza'])
-
->>>>>>> 7be0a4a93a60cabd25831a576ef7c675c8c62978
