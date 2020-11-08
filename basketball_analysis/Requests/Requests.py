@@ -29,9 +29,23 @@ class nba_request():
         return self.parse_url(url, '_per_game.html', year)
 
     def per_36(self, url, year):
+        """ This gets the per-36-game statistics in a season
+
+        :param url: an attribute of nba_request object
+        :param year: an integer as a season year
+        :return:
+            df: a data pandas frame
+        """
         return self.parse_url(url, '_per_minute.html', year)
     
     def per_100(self, url, year):
+        """ This gets the per-100-game statistics in a season
+
+        :param url: an attribute of nba_request object
+        :param year: an integer as a season year
+        :return:
+            df: a data pandas frame
+        """
         return self.parse_url(url, '_per_poss.html', year)
 
     def advanced(self, url, year):
