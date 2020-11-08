@@ -141,6 +141,14 @@ class szn_analysis():
         return shot.histogram(three_percent_list)
 
     def szn_percentile(self, dic, set_type='per_game', metric='3P%', percentile=50): #ANALYSIS OF per game
+        """ Return the 50th percentile
+
+        :param dic: (dictionary) statistics for one season
+        :param set_type: (string) a type of file
+        :param metric: (string) a wanted metric
+        :param percentile: (float) the nth percentile
+        :return:
+        """
         percent_list = []
         index = 12
         if metric == 'FG%':
