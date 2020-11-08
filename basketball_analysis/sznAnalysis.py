@@ -44,24 +44,41 @@ class player_analysis():
 
         return shot.regression(amended_year,good_y)
     
-    def next_szn_prediction(self):
+    def next_per_game_prediction(self):
         szn_plus = []
-
-        for index in range(len(self.szns[0][0])):
-            success = False
-            try:
-                num_temp = float(self.szns[0][1][index])
-                success = True
-            except:
+        print(self.szns[1].structures)
+        for season in self.szns:
+            print(season.structures[0][1][0])
+            for index in range(len(season.structures[0][1])): #STRUCTURES 0 is temp
                 success = False
-            finally:
-                if success:
-                    self.player_regression(index)
-                    #error handle for polynomial vs linear
-                    # add to new array
-                else:
-                    #carry value from last season forward
-                    #add to new array
+                try:
+                    num_temp = float(season.structures[0][1][index])
+                    success = True
+                except:
+                    success = False
+                finally:
+                    if success:
+                        if season.structures[0][0][index] == 'AGE':
+                            szn_plus.append(int(season.structures[0][1][index]))
+                        else:
+                            print(season.structures[0][1][index])
+                            regression_model = self.player_regression(index)
+                            if type(regression_model) == type(['lst']):
+                                value = regression_model[0] * (self.years_active[-1] + 1) + regression_model[1]
+                                szn_plus.append(round(value,3))
+                            else:
+                                value = regression_model(years_active[-1]+1)
+                                szn_plus.append(round(value, 3))
+                        
+                    else:
+                        szn_plus.append(season.structures[0][1][index])
+
+                        #error handle for polynomial vs linear
+                        # add to new array
+        temp = [[season.structures[0][0]]]
+        temp[0].append(szn_plus)
+
+        return temp
         
         #return new array
             
@@ -114,7 +131,7 @@ class szn_analysis():
         else:
             print('invalid')
     
-    def histo_3percent(self, dic): #ANALYSIS OF per game
+    def histo_percent(self, dic): #ANALYSIS OF per game
         three_percent_list = []
 
         for x in dic:
@@ -123,20 +140,24 @@ class szn_analysis():
         
         return shot.histogram(three_percent_list)
 
-        def szn_50_3percent(self, dic): #ANALYSIS OF per game
-            three_percent_list = []
-
-            for x in dic:
-                if dic[x][12] != '' and (dic[x][12] != '3P%'):
-                    three_percent_list.append(float(dic[x][12]))
+    def szn_percentile(self, dic, set_type='per_game', metric='3P%', percentile=50): #ANALYSIS OF per game
+        percent_list = []
+        index = 12
+        if metric == 'FG%':
+            index = 9
+        elif metric == '3P%':
+            index = 12
+        elif metric == '2P%':
+            index = 15
+        elif metric == 'eFG%':
+            index = 16
+        elif metric == 'FT%':
+            index = 19
+                
+        for x in dic:
+            if dic[x][index] != '' and (dic[x][index] != metric):
+                percent_list.append(float(dic[x][index]))
             
-            return shot.fifty_percentile(three_percent_list)
+        return shot.n_percentile(percent_list)
 
 
-
-# g = player_analysis('Stephen Curry')
-# print(g.name)
-# g.szn_count(year=2020, typi=1)
-# print(g.years_active)
-# for x in g.szns:
-#     print(x.structures[0][1])
