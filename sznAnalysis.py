@@ -18,7 +18,6 @@ class player_analysis():
             self.years_active.append(year)
             year -= 1
             self.szns.append(temp)
-            
 
 class szn_analysis():
     def __init__(self, year):
