@@ -192,6 +192,27 @@ class szn_analysis():
             return self.nba_request.advanced(self.nba_request.url, self.year)
         else:
             print('invalid')
+     
+     def histo_percent(self, dic set_type='per_game', metric='3P%'): #ANALYSIS OF per game
+        percent_list = []
+        index = 12
+        if metric == 'FG%':
+            index = 9
+        elif metric == '3P%':
+            index = 12
+        elif metric == '2P%':
+            index = 15
+        elif metric == 'eFG%':
+            index = 16
+        elif metric == 'FT%':
+            index = 19
+
+        for x in dic:
+            if dic[x][index] != '' and (dic[x][index] != metric):
+                percent_list.append(float(dic[x][index]))
+        
+        return shot.histogram(percent_list)
+
     
 
 
