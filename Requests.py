@@ -60,8 +60,3 @@ class nba_request():
         stats = pd.DataFrame(player_stats, columns = headers)
         return stats
 
-
-
-
-
-
