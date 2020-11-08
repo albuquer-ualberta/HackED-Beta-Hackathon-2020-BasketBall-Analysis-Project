@@ -57,6 +57,9 @@ def get_vertical_index(typi, category):
             return 2
         elif category == 'GAMES':
             return 4
+    elif typi in [0, 1, 2, 3]:
+        if category == '3P':
+            return 10
 
 
 def get_list_names(season_data):
