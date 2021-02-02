@@ -5,7 +5,7 @@ Automat==0.6.0
 base58==2.0.0
 baseconvert==1.0.0a4
 beautifulsoup4==4.9.1
-bleach==3.1.5
+bleach==3.3.0
 blinker==1.4
 certifi==2020.6.20
 cffi==1.14.2
