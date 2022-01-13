@@ -48,7 +48,7 @@ oauthlib==2.0.6
 packaging==20.4
 PAM==0.4.2
 pandas==1.1.4
-Pillow==8.0.1
+Pillow==9.0.0
 pkginfo==1.5.0.1
 pyaes==1.6.1
 pyasn1==0.4.2
